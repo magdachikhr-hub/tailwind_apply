@@ -7,8 +7,6 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-amber-300: oklch(87.9% 0.169 91.605);
-    --color-amber-700: oklch(55.5% 0.163 48.998);
     --color-white: #fff;
     --spacing: 0.25rem;
     --font-weight-normal: 400;
@@ -174,26 +172,14 @@
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
-  .top-\[250px\] {
-    top: 250px;
+  .mt-\[40px\] {
+    margin-top: 40px;
   }
-  .left-\[30px\] {
-    left: 30px;
+  .mt-\[150px\] {
+    margin-top: 150px;
   }
-  .z-2 {
-    z-index: 2;
-  }
-  .z-10 {
-    z-index: 10;
-  }
-  .z-20 {
-    z-index: 20;
-  }
-  .z-\[-1\] {
-    z-index: -1;
-  }
-  .z-\[-1px\] {
-    z-index: -1px;
+  .mb-\[80px\] {
+    margin-bottom: 80px;
   }
   .flex {
     display: flex;
@@ -201,41 +187,20 @@
   .table {
     display: table;
   }
-  .h-10 {
-    height: calc(var(--spacing) * 10);
-  }
-  .h-\[59\] {
-    height: 59;
-  }
-  .h-\[593\] {
-    height: 593;
-  }
   .h-\[593px\] {
     height: 593px;
   }
   .h-full {
     height: 100%;
   }
-  .w-15 {
-    width: calc(var(--spacing) * 15);
-  }
-  .w-125 {
-    width: calc(var(--spacing) * 125);
-  }
   .w-130 {
     width: calc(var(--spacing) * 130);
-  }
-  .w-\[315\] {
-    width: 315;
   }
   .w-\[315px\] {
     width: 315px;
   }
-  .w-\[375\] {
-    width: 375;
-  }
-  .w-\[375px\] {
-    width: 375px;
+  .w-\[335px\] {
+    width: 335px;
   }
   .w-full {
     width: 100%;
@@ -246,8 +211,14 @@
   .resize {
     resize: both;
   }
+  .flex-col {
+    flex-direction: column;
+  }
   .items-center {
     align-items: center;
+  }
+  .items-start {
+    align-items: flex-start;
   }
   .justify-center {
     justify-content: center;
@@ -259,11 +230,11 @@
   .bg-\[\#00000059\] {
     background-color: #00000059;
   }
-  .bg-amber-300 {
-    background-color: var(--color-amber-300);
+  .bg-cover {
+    background-size: cover;
   }
-  .bg-amber-700 {
-    background-color: var(--color-amber-700);
+  .bg-center {
+    background-position: center;
   }
   .pr-5 {
     padding-right: calc(var(--spacing) * 5);
@@ -274,27 +245,21 @@
   .text-center {
     text-align: center;
   }
+  .text-start {
+    text-align: start;
+  }
+  .text-\[24px\] {
+    font-size: 24px;
+  }
   .text-\[28px\] {
     font-size: 28px;
   }
   .text-\[40px\] {
     font-size: 40px;
   }
-  .leading-\[-2\%\] {
-    --tw-leading: -2%;
-    line-height: -2%;
-  }
-  .leading-\[-2\] {
-    --tw-leading: -2;
-    line-height: -2;
-  }
   .leading-\[110\%\] {
     --tw-leading: 110%;
     line-height: 110%;
-  }
-  .leading-\[110\.00000000000001\%\] {
-    --tw-leading: 110.00000000000001%;
-    line-height: 110.00000000000001%;
   }
   .font-normal {
     --tw-font-weight: var(--font-weight-normal);
@@ -303,13 +268,6 @@
   .tracking-\[-2\%\] {
     --tw-tracking: -2%;
     letter-spacing: -2%;
-  }
-  .tracking-\[-2\] {
-    --tw-tracking: -2;
-    letter-spacing: -2;
-  }
-  .text-amber-300 {
-    color: var(--color-amber-300);
   }
   .text-white {
     color: var(--color-white);
@@ -321,9 +279,9 @@
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
   }
-  .sm\:w-full {
-    @media (width >= 40rem) {
-      width: 100%;
+  .lg\:block {
+    @media (width >= 64rem) {
+      display: block;
     }
   }
   .lg\:flex {
@@ -331,28 +289,23 @@
       display: flex;
     }
   }
-  .\[\&\]\:text-\[40px\] {
-    font-size: 40px;
-  }
-  .\[\&_\]\:text-\[40px\] {
-    &  {
-      font-size: 40px;
+  .lg\:flex-row {
+    @media (width >= 64rem) {
+      flex-direction: row;
     }
   }
-  .\[\&_p\]\:bg-amber-300 {
-    & p {
-      background-color: var(--color-amber-300);
-    }
-  }
-  .\[\&_p\]\:text-\[40px\] {
-    & p {
-      font-size: 40px;
+  .lg\:items-start {
+    @media (width >= 64rem) {
+      align-items: flex-start;
     }
   }
 }
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
 * {
   font-family: "EB Garamond", serif;
+}
+section.relative {
+  background-image: url(./background.jpg);
 }
 @property --tw-border-style {
   syntax: "*";
