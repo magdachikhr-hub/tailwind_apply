@@ -9,7 +9,9 @@
       "Courier New", monospace;
     --color-amber-300: oklch(87.9% 0.169 91.605);
     --color-amber-700: oklch(55.5% 0.163 48.998);
+    --color-white: #fff;
     --spacing: 0.25rem;
+    --font-weight-normal: 400;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -163,11 +165,56 @@
   }
 }
 @layer utilities {
+  .absolute {
+    position: absolute;
+  }
+  .relative {
+    position: relative;
+  }
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
+  .top-\[250px\] {
+    top: 250px;
+  }
+  .left-\[30px\] {
+    left: 30px;
+  }
+  .z-2 {
+    z-index: 2;
+  }
+  .z-10 {
+    z-index: 10;
+  }
+  .z-20 {
+    z-index: 20;
+  }
+  .z-\[-1\] {
+    z-index: -1;
+  }
+  .z-\[-1px\] {
+    z-index: -1px;
+  }
+  .flex {
+    display: flex;
+  }
   .table {
     display: table;
   }
   .h-10 {
     height: calc(var(--spacing) * 10);
+  }
+  .h-\[59\] {
+    height: 59;
+  }
+  .h-\[593\] {
+    height: 593;
+  }
+  .h-\[593px\] {
+    height: 593px;
+  }
+  .h-full {
+    height: 100%;
   }
   .w-15 {
     width: calc(var(--spacing) * 15);
@@ -178,15 +225,39 @@
   .w-130 {
     width: calc(var(--spacing) * 130);
   }
+  .w-\[315\] {
+    width: 315;
+  }
+  .w-\[315px\] {
+    width: 315px;
+  }
+  .w-\[375\] {
+    width: 375;
+  }
+  .w-\[375px\] {
+    width: 375px;
+  }
+  .w-full {
+    width: 100%;
+  }
   .border-collapse {
     border-collapse: collapse;
   }
   .resize {
     resize: both;
   }
+  .items-center {
+    align-items: center;
+  }
+  .justify-center {
+    justify-content: center;
+  }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
+  }
+  .bg-\[\#00000059\] {
+    background-color: #00000059;
   }
   .bg-amber-300 {
     background-color: var(--color-amber-300);
@@ -200,11 +271,48 @@
   .pl-5 {
     padding-left: calc(var(--spacing) * 5);
   }
+  .text-center {
+    text-align: center;
+  }
+  .text-\[28px\] {
+    font-size: 28px;
+  }
   .text-\[40px\] {
     font-size: 40px;
   }
+  .leading-\[-2\%\] {
+    --tw-leading: -2%;
+    line-height: -2%;
+  }
+  .leading-\[-2\] {
+    --tw-leading: -2;
+    line-height: -2;
+  }
+  .leading-\[110\%\] {
+    --tw-leading: 110%;
+    line-height: 110%;
+  }
+  .leading-\[110\.00000000000001\%\] {
+    --tw-leading: 110.00000000000001%;
+    line-height: 110.00000000000001%;
+  }
+  .font-normal {
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
+  }
+  .tracking-\[-2\%\] {
+    --tw-tracking: -2%;
+    letter-spacing: -2%;
+  }
+  .tracking-\[-2\] {
+    --tw-tracking: -2;
+    letter-spacing: -2;
+  }
   .text-amber-300 {
     color: var(--color-amber-300);
+  }
+  .text-white {
+    color: var(--color-white);
   }
   .underline {
     text-decoration-line: underline;
@@ -251,6 +359,18 @@
   inherits: false;
   initial-value: solid;
 }
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-outline-style {
   syntax: "*";
   inherits: false;
@@ -260,6 +380,9 @@
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-border-style: solid;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-tracking: initial;
       --tw-outline-style: solid;
     }
   }
