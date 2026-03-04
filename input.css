@@ -4,3 +4,14 @@
 * {
   font-family: "EB Garamond", serif;
 }
+
+/* .text {
+  width: 520px;
+  height: 208px;
+  color: peru;
+  font-size: 24px;
+} */
+
+/* .text {
+  @apply w-125 h-52 text-amber-50 mb-10;
+} */
