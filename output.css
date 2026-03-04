@@ -1,4 +1,5 @@
 /*! tailwindcss v4.2.1 | MIT License | https://tailwindcss.com */
+@layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
@@ -162,6 +163,9 @@
   }
 }
 @layer utilities {
+  .table {
+    display: table;
+  }
   .h-10 {
     height: calc(var(--spacing) * 10);
   }
@@ -173,6 +177,19 @@
   }
   .w-130 {
     width: calc(var(--spacing) * 130);
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .resize {
+    resize: both;
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .bg-amber-300 {
+    background-color: var(--color-amber-300);
   }
   .bg-amber-700 {
     background-color: var(--color-amber-700);
@@ -189,6 +206,13 @@
   .text-amber-300 {
     color: var(--color-amber-300);
   }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
   .sm\:w-full {
     @media (width >= 40rem) {
       width: 100%;
@@ -199,8 +223,44 @@
       display: flex;
     }
   }
+  .\[\&\]\:text-\[40px\] {
+    font-size: 40px;
+  }
+  .\[\&_\]\:text-\[40px\] {
+    &  {
+      font-size: 40px;
+    }
+  }
+  .\[\&_p\]\:bg-amber-300 {
+    & p {
+      background-color: var(--color-amber-300);
+    }
+  }
+  .\[\&_p\]\:text-\[40px\] {
+    & p {
+      font-size: 40px;
+    }
+  }
 }
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
 * {
   font-family: "EB Garamond", serif;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
+      --tw-outline-style: solid;
+    }
+  }
 }
