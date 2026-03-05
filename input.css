@@ -19,3 +19,7 @@
 section.relative {
   background-image: url(./background.jpg);
 }
+
+section.background {
+  background-image: url(./city.jpg);
+}
